@@ -3,7 +3,7 @@ var fs = require('fs');
 var Promise = function(){
     this.queue = [];
     this.isPromise = true;
-}
+};
 
 Promise.prototype.then = function(fulfilledHandler, errorHandler, progressHandler){
     var handler = {};
@@ -15,11 +15,11 @@ Promise.prototype.then = function(fulfilledHandler, errorHandler, progressHandle
     }
     this.queue.push(handler);
     return this;
-}
+};
 
 var Deferred = function(){
     this.promise = new Promise();
-}
+};
 
 Deferred.prototype.resolve = function(obj){
     var promise = this.promise;
@@ -34,7 +34,7 @@ Deferred.prototype.resolve = function(obj){
             }
         }
     }
-}
+};
 
 Deferred.prototype.reject = function(err){
     var promise = this.promise;
@@ -49,7 +49,7 @@ Deferred.prototype.reject = function(err){
             }
         }
     }
-}
+};
 
 Deferred.prototype.callback = function(){
     var that = this;
@@ -58,23 +58,22 @@ Deferred.prototype.callback = function(){
             return that.reject(err);
         }
         that.resolve(file);
-    }
-}
+    };
+};
 
-var readFile1 = function(file, encoding){
-    var deferred = new Deferred();
-    fs.readFile(file, encoding, deferred.callback());
-    return deferred.promise;
-}
+var smooth = function(method){
+    return function(){
+        var deferred = new Deferred();
+        var args = Array.prototype.slice.call(arguments, 0);
+        args.push(deferred.callback());
+        method.apply(null, args);
+        return deferred.promise;
+    };
+};
 
-var readFile2 = function(file, encoding){
-    var deferred = new Deferred();
-    fs.readFile(file, encoding, deferred.callback());
-    return deferred.promise;
-}
-
-readFile1('file1.txt', 'utf8').then(function(file1){
-    return readFile2(file1.trim(), 'utf8');
+var readFile = smooth(fs.readFile);
+readFile('file1.txt', 'utf8').then(function(file1){
+    return readFile(file1.trim(), 'utf8');
 }).then(function(file2){
     console.log(file2);
-})
+});
