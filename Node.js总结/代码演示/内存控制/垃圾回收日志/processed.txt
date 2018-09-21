@@ -1,0 +1,168 @@
+Statistical profiling result from isolate-0x102802400-v8.log, (822 ticks, 6 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+      6    0.7%          /usr/lib/system/libsystem_pthread.dylib
+      1    0.1%          /usr/lib/system/libsystem_malloc.dylib
+      1    0.1%          /usr/lib/libc++abi.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     52    6.3%    6.4%  Stub: ArraySingleArgumentConstructorStub
+      3    0.4%    0.4%  LazyCompile: *<anonymous> /Users/jackmoxiaoyu/Documents/其它/my-summary/Node.js总结/代码演示/内存控制/垃圾回收日志/gc_log.js:1:11
+      1    0.1%    0.1%  Builtin: FastArrayPush
+
+ [C++]:
+   ticks  total  nonlib   name
+    344   41.8%   42.3%  T v8::internal::IncrementalMarking::Step(unsigned long, v8::internal::IncrementalMarking::CompletionAction, v8::internal::IncrementalMarking::ForceCompletionAction, v8::internal::StepOrigin)
+     79    9.6%    9.7%  t v8::internal::Scavenger::ScavengeObject(v8::internal::HeapObject**, v8::internal::HeapObject*)
+     57    6.9%    7.0%  T _os_unfair_lock_assert_not_owner
+     33    4.0%    4.1%  T v8::internal::Scavenger::Process(v8::internal::Scavenger::Barrier*)
+     28    3.4%    3.4%  T _os_unfair_lock_assert_owner
+     15    1.8%    1.8%  t node::(anonymous namespace)::ContextifyScript::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     15    1.8%    1.8%  T _vm_purgable_control
+     12    1.5%    1.5%  t v8::internal::Worklist<v8::internal::HeapObject*, 64>::Pop(int, v8::internal::HeapObject**)
+     12    1.5%    1.5%  T _os_unfair_lock_unlock_no_tsd_4libpthread
+     10    1.2%    1.2%  t v8::internal::IterateAndScavengePromotedObjectsVisitor::VisitPointers(v8::internal::HeapObject*, v8::internal::Object**, v8::internal::Object**)
+      9    1.1%    1.1%  t v8::internal::PagedSpace::Available()
+      9    1.1%    1.1%  t __os_lock_unfair_lock
+      9    1.1%    1.1%  T v8::internal::Heap::Scavenge()
+      9    1.1%    1.1%  T v8::internal::Heap::CreateFillerObjectAt(unsigned char*, int, v8::internal::ClearRecordedSlots)
+      9    1.1%    1.1%  T v8::internal::Heap::AllocateFixedArrayWithFiller(int, v8::internal::PretenureFlag, v8::internal::Object*)
+      9    1.1%    1.1%  T _mach_vm_protect
+      7    0.9%    0.9%  T _mach_vm_purgable_control
+      6    0.7%    0.7%  t __os_unfair_lock_unlock_slow
+      5    0.6%    0.6%  t v8::internal::(anonymous namespace)::CopyObjectToObjectElements(v8::internal::FixedArrayBase*, v8::internal::ElementsKind, unsigned int, v8::internal::FixedArrayBase*, v8::internal::ElementsKind, unsigned int, int)
+      5    0.6%    0.6%  t int v8::internal::SlotSet::Iterate<v8::internal::PageScavengingItem::Process(v8::internal::Scavenger*)::'lambda'(unsigned char*)>(v8::internal::PageScavengingItem::Process(v8::internal::Scavenger*)::'lambda'(unsigned char*), v8::internal::SlotSet::EmptyBucketMode)
+      5    0.6%    0.6%  T v8::internal::Bitmap::Clear()
+      4    0.5%    0.5%  t v8::internal::Worklist<std::__1::pair<v8::internal::HeapObject*, int>, 256>::Pop(int, std::__1::pair<v8::internal::HeapObject*, int>*)
+      4    0.5%    0.5%  T node::NodePlatform::MonotonicallyIncreasingTime()
+      3    0.4%    0.4%  t __os_lock_unfair_trylock
+      3    0.4%    0.4%  T v8::internal::Space::AllocationStep(unsigned char*, int)
+      3    0.4%    0.4%  T v8::internal::Scavenger::IterateAndScavengePromotedObject(v8::internal::HeapObject*, int)
+      3    0.4%    0.4%  T v8::internal::IncrementalMarking::RecordWriteSlow(v8::internal::HeapObject*, v8::internal::Object**, v8::internal::Object*)
+      3    0.4%    0.4%  T _os_unfair_lock_lock_no_tsd_4libpthread
+      2    0.2%    0.2%  t void v8::internal::Scanner::Advance<false, true>()
+      2    0.2%    0.2%  t v8::internal::PointersUpdatingVisitor::VisitPointers(v8::internal::HeapObject*, v8::internal::Object**, v8::internal::Object**)
+      2    0.2%    0.2%  t v8::internal::LiveObjectRange<(v8::internal::LiveObjectIterationMode)0>::iterator::AdvanceToNextValidObject()
+      2    0.2%    0.2%  t _update_cache_for_file_streams
+      2    0.2%    0.2%  t __malloc_initialize
+      2    0.2%    0.2%  T v8::internal::interpreter::BytecodeArrayWriter::EmitBytecode(v8::internal::interpreter::BytecodeNode const*)
+      1    0.1%    0.1%  t void v8::internal::SlotSet::Insert<(v8::internal::AccessMode)0>(int)
+      1    0.1%    0.1%  t void v8::internal::BodyDescriptorApply<v8::internal::CallIterateBody, void, v8::internal::HeapObject*, int, v8::internal::ObjectVisitor*>(v8::internal::InstanceType, v8::internal::HeapObject*, int, v8::internal::ObjectVisitor*)
+      1    0.1%    0.1%  t v8::internal::ParserBase<v8::internal::Parser>::ParseStatement(v8::internal::ZoneList<v8::internal::AstRawString const*>*, v8::internal::AllowLabelledFunctionStatement, bool*)
+      1    0.1%    0.1%  t v8::internal::ParserBase<v8::internal::Parser>::ParseConditionalExpression(bool, bool*)
+      1    0.1%    0.1%  t v8::internal::LocalAllocator::AllocateInLAB(int, v8::internal::AllocationAlignment)
+      1    0.1%    0.1%  t v8::internal::(anonymous namespace)::ObjectBoilerplate::Create(v8::internal::Isolate*, v8::internal::Handle<v8::internal::HeapObject>, int, v8::internal::PretenureFlag)
+      1    0.1%    0.1%  t v8::internal::(anonymous namespace)::JSObjectWalkVisitor<v8::internal::(anonymous namespace)::AllocationSiteCreationContext>::StructureWalk(v8::internal::Handle<v8::internal::JSObject>)
+      1    0.1%    0.1%  t node::cares_wrap::(anonymous namespace)::ChannelWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t node::Binding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t _uv__hrtime
+      1    0.1%    0.1%  t _szone_malloc_should_clear
+      1    0.1%    0.1%  t _insert_node
+      1    0.1%    0.1%  T v8::internal::interpreter::BytecodeGenerator::VisitAndPushIntoRegisterList(v8::internal::Expression*, v8::internal::interpreter::RegisterList*)
+      1    0.1%    0.1%  T v8::internal::interpreter::BytecodeArrayBuilder::BinaryOperation(v8::internal::Token::Value, v8::internal::interpreter::Register, int)
+      1    0.1%    0.1%  T v8::internal::SerializerDeserializer::Iterate(v8::internal::Isolate*, v8::internal::RootVisitor*)
+      1    0.1%    0.1%  T v8::internal::Scavenger::RecordCopiedObject(v8::internal::HeapObject*)
+      1    0.1%    0.1%  T v8::internal::RootScavengeVisitor::VisitRootPointers(v8::internal::Root, v8::internal::Object**, v8::internal::Object**)
+      1    0.1%    0.1%  T v8::internal::MemoryChunk::Initialize(v8::internal::Heap*, unsigned char*, unsigned long, unsigned char*, unsigned char*, v8::internal::Executability, v8::internal::Space*, v8::base::VirtualMemory*)
+      1    0.1%    0.1%  T v8::internal::JSObject::SetPrototype(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Object::ShouldThrow)
+      1    0.1%    0.1%  T v8::internal::IncrementalMarking::AdvanceIncrementalMarkingOnAllocation()
+      1    0.1%    0.1%  T v8::internal::Factory::InternalizeOneByteString(v8::internal::Vector<unsigned char const>)
+      1    0.1%    0.1%  T v8::base::VirtualMemory::Reset()
+      1    0.1%    0.1%  T v8::base::Mutex::Lock()
+      1    0.1%    0.1%  T node::TTYWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T _vm_read
+      1    0.1%    0.1%  T _os_unfair_lock_unlock_4Libc
+      1    0.1%    0.1%  T _mach_vm_map
+      1    0.1%    0.1%  T _mach_error_type
+      1    0.1%    0.1%  T _fputws_l
+      1    0.1%    0.1%  T ___gdtoa
+
+ [Summary]:
+   ticks  total  nonlib   name
+     56    6.8%    6.9%  JavaScript
+    752   91.5%   92.4%  C++
+    710   86.4%   87.2%  GC
+      8    1.0%          Shared libraries
+      6    0.7%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+     18   40.0%    2.2%  T v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+     17   37.8%    2.1%  T v8::internal::Runtime_GrowArrayElements(int, v8::internal::Object**, v8::internal::Isolate*)
+      7   15.6%    0.9%  T v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    2.2%    0.1%  T v8::internal::Runtime_CreateObjectLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    2.2%    0.1%  T v8::internal::Runtime_CreateArrayLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    2.2%    0.1%  T v8::internal::Builtin_ObjectSetPrototypeOf(int, v8::internal::Object**, v8::internal::Isolate*)
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    344   41.8%  T v8::internal::IncrementalMarking::Step(unsigned long, v8::internal::IncrementalMarking::CompletionAction, v8::internal::IncrementalMarking::ForceCompletionAction, v8::internal::StepOrigin)
+
+     79    9.6%  t v8::internal::Scavenger::ScavengeObject(v8::internal::HeapObject**, v8::internal::HeapObject*)
+
+     57    6.9%  T _os_unfair_lock_assert_not_owner
+
+     52    6.3%  Stub: ArraySingleArgumentConstructorStub
+     52  100.0%    LazyCompile: *<anonymous> /Users/jackmoxiaoyu/Documents/其它/my-summary/Node.js总结/代码演示/内存控制/垃圾回收日志/gc_log.js:1:11
+     52  100.0%      LazyCompile: ~Module._compile module.js:609:37
+     52  100.0%        LazyCompile: ~Module._extensions..js module.js:661:37
+     52  100.0%          LazyCompile: ~Module.load module.js:556:33
+     52  100.0%            LazyCompile: ~tryModuleLoad module.js:502:23
+
+     33    4.0%  T v8::internal::Scavenger::Process(v8::internal::Scavenger::Barrier*)
+
+     28    3.4%  T _os_unfair_lock_assert_owner
+
+     15    1.8%  t node::(anonymous namespace)::ContextifyScript::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     15  100.0%    T v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+     15  100.0%      LazyCompile: ~runInThisContext bootstrap_node.js:499:28
+     15  100.0%        LazyCompile: ~NativeModule.compile bootstrap_node.js:588:44
+     15  100.0%          LazyCompile: ~NativeModule.require bootstrap_node.js:520:34
+      3   20.0%            Script: ~<anonymous> module.js:1:11
+      2   13.3%            Script: ~<anonymous> tty.js:1:11
+      2   13.3%            Script: ~<anonymous> stream.js:1:11
+      1    6.7%            Script: ~<anonymous> util.js:1:11
+      1    6.7%            Script: ~<anonymous> internal/url.js:1:11
+      1    6.7%            Script: ~<anonymous> internal/trace_events_async_hooks.js:1:11
+      1    6.7%            Script: ~<anonymous> internal/loader/ModuleRequest.js:1:11
+      1    6.7%            Script: ~<anonymous> internal/encoding.js:1:11
+      1    6.7%            LazyCompile: ~setup_performance internal/process.js:14:27
+      1    6.7%            LazyCompile: ~setupGlobalVariables bootstrap_node.js:255:32
+      1    6.7%            LazyCompile: ~setupGlobalTimeouts bootstrap_node.js:300:31
+
+     15    1.8%  T _vm_purgable_control
+      1    6.7%    T v8::internal::Runtime_GrowArrayElements(int, v8::internal::Object**, v8::internal::Isolate*)
+      1  100.0%      LazyCompile: *<anonymous> /Users/jackmoxiaoyu/Documents/其它/my-summary/Node.js总结/代码演示/内存控制/垃圾回收日志/gc_log.js:1:11
+      1  100.0%        LazyCompile: ~Module._compile module.js:609:37
+      1  100.0%          LazyCompile: ~Module._extensions..js module.js:661:37
+      1  100.0%            LazyCompile: ~Module.load module.js:556:33
+
+     12    1.5%  t v8::internal::Worklist<v8::internal::HeapObject*, 64>::Pop(int, v8::internal::HeapObject**)
+
+     12    1.5%  T _os_unfair_lock_unlock_no_tsd_4libpthread
+
+     10    1.2%  t v8::internal::IterateAndScavengePromotedObjectsVisitor::VisitPointers(v8::internal::HeapObject*, v8::internal::Object**, v8::internal::Object**)
+
+      9    1.1%  t v8::internal::PagedSpace::Available()
+
+      9    1.1%  t __os_lock_unfair_lock
+
+      9    1.1%  T v8::internal::Heap::Scavenge()
+
+      9    1.1%  T v8::internal::Heap::CreateFillerObjectAt(unsigned char*, int, v8::internal::ClearRecordedSlots)
+
+      9    1.1%  T v8::internal::Heap::AllocateFixedArrayWithFiller(int, v8::internal::PretenureFlag, v8::internal::Object*)
+      9  100.0%    T v8::internal::Runtime_GrowArrayElements(int, v8::internal::Object**, v8::internal::Isolate*)
+      9  100.0%      LazyCompile: *<anonymous> /Users/jackmoxiaoyu/Documents/其它/my-summary/Node.js总结/代码演示/内存控制/垃圾回收日志/gc_log.js:1:11
+      9  100.0%        LazyCompile: ~Module._compile module.js:609:37
+      9  100.0%          LazyCompile: ~Module._extensions..js module.js:661:37
+      9  100.0%            LazyCompile: ~Module.load module.js:556:33
+
+      9    1.1%  T _mach_vm_protect
+
